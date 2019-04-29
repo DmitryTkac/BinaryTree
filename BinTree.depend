@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1550579161 source:d:\algoritmi un strukturas\bintree\main.cpp
+	"headers/binTreeManager.h"
+
+1556020659 source:d:\algoritmi un strukturas\bintree\src\bintreemanager.cpp
+	"../headers/binTreeManager.h"
+
+1556020755 d:\algoritmi un strukturas\bintree\headers\bintreemanager.h
+	"binTree.h"
+
+1550579065 d:\algoritmi un strukturas\bintree\headers\bintree.h
+	<iostream>
+
