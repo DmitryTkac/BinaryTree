@@ -14,6 +14,7 @@ class binTreeManager {
         void addData(int);
         void addData(int, binTree*);
 
+
         void print(binTree*);
 
         void inOrder(binTree*);

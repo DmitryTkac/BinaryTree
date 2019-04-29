@@ -77,6 +77,7 @@ void binTreeManager::addData(int data, binTree* bTree){
 
 }
 
+
 void binTreeManager::print(binTree* bTree) {
     if (bTree->left != NULL) {
         cout << "LEFT BRANCH: " << bTree->left->data << endl;
@@ -156,11 +157,41 @@ void binTreeManager::autoBalance(binTree* bTree) {
     //this->fillInOrder(bTree, arr[], 0)
     this->fillInOrder(bTree, arr, index);
     cout << endl;
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < arr_size; i++) {
         cout << arr[i] << endl;
     }
 
+    binTree *balancedTree = new binTree;
+    int mid_el_index = arr_size/2 - 1;
+    int mid_el = arr[mid_el_index];
+    balancedTree->left = NULL;
+    balancedTree->right = NULL;
+    balancedTree->data = mid_el;
 
+    for (int i = 0; i < arr_size; i++) {
+        if (i == mid_el_index) {
+            continue;
+        }
+        this->addData(arr[i], balancedTree);
+    }
+
+    cout << "IN_ORDER" << endl;
+    this->inOrder(balancedTree);
+    cout << " BALANCED TREE" << endl;
+    this->inOrder(this->tree);
+    cout << " THIS->TREE" << endl;
+
+    cout << "PRE_ORDER" << endl;
+    this->preOrder(balancedTree);
+    cout << "BALANCED TREE" << endl;
+    this->preOrder(this->tree);
+    cout << "THIS->TREE" << endl;
+
+    cout << "POST_ORDER" << endl;
+    this->postOrder(balancedTree);
+    cout << "BALANCED TREE" << endl;
+    this->postOrder(this->tree);
+    cout << "THIS->TREE" << endl;
 
 //
 //    cout << "LEFT DATA COUNT: " << left_count  << endl << "RIGHT DATA COUNT: " << right_count << endl;
